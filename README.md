@@ -1,109 +1,133 @@
-# AI/ML Internship Projects
+# Crack404 AI/ML Internship
 
-This repository contains my weekly projects and practice tasks completed during the Crack404 AI/ML Internship.
+This repository contains the practical projects I completed during my **Crack404 AI/ML Internship**.
 
-The projects cover machine learning, model persistence, computer vision, and OCR-based document processing.
+The work covers machine learning, model persistence, computer vision, and OCR-based automation using Python.
 
-## Project Structure
+---
 
-```text
-AI_ML_Intern/
-│
-├── week1/
-├── week2_churn_project/
-├── week3_ocr_project/
-├── README.md
-└── .gitignore
-```
+## 📌 Projects Overview
 
-## Week 1 – Customer Churn Prediction
+| Week | Project | Main Focus | Status |
+|---|---|---|---|
+| Week 1 | Customer Churn Prediction | Machine Learning, Random Forest, Model Evaluation | Completed |
+| Week 2 | Model Serialization & Inference | Pickle, Joblib, Standalone Prediction | Completed |
+| Week 3 | Automated Receipt OCR | OpenCV, EasyOCR, Image Processing | Completed |
 
-The first project focuses on predicting customer churn using a Random Forest classification model.
+---
 
-### Main Tasks
+## Week 1 — Customer Churn Prediction
 
-- Loaded and explored the Telco Customer Churn dataset
-- Cleaned missing values in `TotalCharges`
-- Converted categorical features into machine-readable format
-- Split the dataset into training and testing sets
+The first project focused on predicting customer churn using a Random Forest classification model.
+
+### Main Work
+
+- Cleaned and prepared the Telco Customer Churn dataset
+- Handled missing values in `TotalCharges`
+- Encoded categorical features
 - Built a preprocessing and Random Forest pipeline
-- Evaluated model performance using accuracy, recall, classification report, and confusion matrix
+- Evaluated the model using accuracy, recall, classification report, and confusion matrix
 - Tested different probability thresholds to improve churn recall
-- Analysed the most important features affecting churn prediction
+- Analysed the most important features influencing the model
 
-### Main Files
+### Technologies
 
-```text
-week1/
-├── customer_churn_prediction.ipynb
-├── WA_Fn-UseC_-Telco-Customer-Churn.csv
-└── requirements.txt
-```
+`Python` `Pandas` `NumPy` `Scikit-learn` `Matplotlib` `Seaborn`
+
+📁 [`week1/`](./week1)
 
 ---
 
-## Week 2 – Model Serialization and Standalone Prediction
+## Week 2 — Model Serialization & Standalone Prediction
 
-The second project focuses on saving a trained machine-learning pipeline and using it later without retraining the model.
+The second project focused on saving a trained machine learning pipeline and using it later without retraining.
 
-### Main Tasks
+### Main Work
 
-- Reused the trained customer churn pipeline
-- Saved the model using Pickle and Joblib
-- Compared model file formats
-- Created a standalone Python prediction script
-- Loaded the saved model without retraining
-- Used hard-coded customer information for prediction
-- Created a version-specific `requirements.txt` file
+- Saved the trained model using Pickle and Joblib
+- Compared the serialized model files
+- Created a standalone `predict.py` script
+- Loaded the saved model for new customer predictions
+- Used hard-coded customer data for inference
+- Maintained project dependencies using `requirements.txt`
 
-### Main Files
+### Technologies
 
-```text
-week2_churn_project/
-├── model_v1.joblib
-├── model_v1.pkl
-├── predict.py
-├── Week_2.ipynb
-└── requirements.txt
-```
+`Python` `Scikit-learn` `Joblib` `Pickle` `Pandas`
+
+📁 [`week2_churn_project/`](./week2_churn_project)
 
 ---
 
-## Week 3 – Automated Receipt OCR Pipeline
+## Week 3 — Automated Receipt OCR Pipeline
 
-The third project focuses on extracting text from receipt images using OpenCV and EasyOCR.
+The third project focused on building an OCR pipeline for receipt and invoice images using OpenCV and EasyOCR.
 
-### Main Tasks
+### Main Work
 
-- Collected five receipt images
+- Collected and processed five receipt images
 - Converted images to grayscale
 - Applied Gaussian Blur for noise reduction
-- Applied Global Thresholding using Otsu's method
-- Applied Adaptive Thresholding
-- Saved cleaned image versions
-- Used EasyOCR to detect text
-- Extracted OCR confidence scores and bounding-box coordinates
+- Applied Global and Adaptive Thresholding
+- Used EasyOCR for text extraction
+- Extracted confidence scores and bounding-box coordinates
 - Used a 60% working confidence threshold to flag uncertain results for human review
-- Compared OCR performance on raw, global-thresholded, and adaptive-thresholded images
+- Compared OCR results from raw, globally thresholded, and adaptively thresholded images
 - Automatically selected the method with the highest average confidence for each receipt
 - Generated bounding-box visualisations
-- Saved structured OCR results to JSON
-- Generated a text-based OCR analysis report
+- Saved structured results in JSON and text report formats
 
-### Main Files
+### Technologies
+
+`Python` `OpenCV` `EasyOCR` `NumPy` `PyTorch`
+
+📁 [`week3_ocr_project/`](./week3_ocr_project)
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
+- Pickle
+- OpenCV
+- EasyOCR
+- PyTorch
+
+---
+
+## Repository Structure
 
 ```text
-week3_ocr_project/
-├── raw_images/
-├── cleaned_images/
-│   ├── global/
-│   └── adaptive/
-├── visualized_images/
-├── outputs/
-│   ├── ocr_results.json
-│   └── ocr_report.txt
-├── ocr_pipeline.py
-└── requirements.txt
+Crack404_AI_ML_Internship/
+│
+├── week1/
+│   ├── customer_churn_prediction.ipynb
+│   ├── WA_Fn-UseC_-Telco-Customer-Churn.csv
+│   └── requirements.txt
+│
+├── week2_churn_project/
+│   ├── model_v1.joblib
+│   ├── model_v1.pkl
+│   ├── predict.py
+│   ├── Week_2.ipynb
+│   └── requirements.txt
+│
+├── week3_ocr_project/
+│   ├── raw_images/
+│   ├── cleaned_images/
+│   ├── visualized_images/
+│   ├── outputs/
+│   ├── ocr_pipeline.py
+│   └── requirements.txt
+│
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -112,12 +136,6 @@ week3_ocr_project/
 
 Each project contains its own `requirements.txt` file.
 
-To install the required packages for a specific project, move into that project folder and run:
-
-```bash
-pip install -r requirements.txt
-```
-
 For example:
 
 ```bash
@@ -125,28 +143,33 @@ cd week3_ocr_project
 pip install -r requirements.txt
 ```
 
+---
+
 ## Running the Week 3 OCR Project
 
 ```bash
+cd week3_ocr_project
 python ocr_pipeline.py
 ```
 
-The script processes all receipt images inside `raw_images` and saves the results in the appropriate output folders.
+The script processes the receipt images, compares different OCR input methods, generates visualised outputs, and saves the extracted results in the output folder.
 
-## Technologies Used
+---
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- OpenCV
-- EasyOCR
-- PyTorch
-- Joblib
-- Pickle
+## Current Progress
 
-## Repository Purpose
+- Week 1 — Completed
+- Week 2 — Completed
+- Week 3 — Completed
 
-This repository documents my practical learning and project development throughout the Crack404 AI/ML Internship, from structured machine-learning problems to model persistence and real-world OCR processing.
+More projects will be added as the internship continues.
+
+---
+
+## 👨‍💻 Author
+
+**CodeBreaker-000**
+
+GitHub: [CodeBreaker-000](https://github.com/CodeBreaker-000)
+
+This repository documents my practical learning and project development throughout the Crack404 AI/ML Internship.
