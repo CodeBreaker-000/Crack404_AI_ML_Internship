@@ -1,0 +1,223 @@
+OCR RECEIPT ANALYSIS REPORT
+==================================================
+
+Receipt: receipt_01.jpg
+Selected method: raw
+Raw confidence: 62.66%
+Global confidence: 20.70%
+Adaptive confidence: 20.80%
+Selected confidence: 62.66%
+High-confidence detections: 26
+Low-confidence detections: 21
+
+Detected Text:
+- 14419 | Confidence: 71.15% | Accepted
+- Kak Thaf Foad | Confidence: 41.27% | Human Review
+- Seattle WA | Confidence: 87.36% | Accepted
+- Tel, | Confidence: 59.13% | Human Review
+- (206 ) 361-9959 | Confidence: 63.01% | Accepted
+- Nelcowe | Confidence: 61.76% | Accepted
+- aroynakthai foog. | Confidence: 29.32% | Human Review
+- to Aroy Mak Thaf' Food | Confidence: 36.53% | Human Review
+- #45 | Confidence: 99.93% | Accepted
+- Dine-In | Confidence: 66.34% | Accepted
+- Order Tiwe; | Confidence: 58.73% | Human Review
+- 07/04/2025 | Confidence: 99.97% | Accepted
+- Table | Confidence: 98.89% | Accepted
+- Party Size: | Confidence: 83.15% | Accepted
+- 4.36 P4 | Confidence: 30.36% | Human Review
+- Patty | Confidence: 98.90% | Accepted
+- Nonton Crean | Confidence: 49.12% | Human Review
+- Gai Krob Kra | Confidence: 85.96% | Accepted
+- s10,00 | Confidence: 44.10% | Human Review
+- [Jasmine Rice] | Confidence: 99.26% | Accepted
+- 817.00 | Confidence: 80.72% | Accepted
+- Khao Man Gaj | Confidence: 68.97% | Accepted
+- 817.00 | Confidence: 63.32% | Accepted
+- Tota] | Confidence: 72.24% | Accepted
+- item(s) | Confidence: 94.44% | Accepted
+- Taxes: | Confidence: 68.22% | Accepted
+- 844.00 | Confidence: 46.50% | Human Review
+- 84,55 | Confidence: 35.77% | Human Review
+- Grand Tota] | Confidence: 94.31% | Accepted
+- 848.55 | Confidence: 96.50% | Accepted
+- Tip Guide | Confidence: 88.19% | Accepted
+- 18x-F8.74, 208-89.71 | Confidence: 16.07% | Human Review
+- Thank vou very much , | Confidence: 26.71% | Human Review
+- Cowe | Confidence: 54.99% | Human Review
+- aga in! ! | Confidence: 40.40% | Human Review
+- Anuy | Confidence: 28.28% | Human Review
+- Grcatod | Confidence: 26.27% | Human Review
+- 98133 | Confidence: 42.74% | Human Review
+- Icowe | Confidence: 27.76% | Human Review
+- Cox | Confidence: 5.07% | Human Review
+- order | Confidence: 97.73% | Accepted
+- Server: | Confidence: 99.56% | Accepted
+- Cheese | Confidence: 99.49% | Accepted
+- Tiea | Confidence: 32.76% | Human Review
+- Yang | Confidence: 83.69% | Accepted
+- 158757,28 , | Confidence: 16.41% | Human Review
+- pack | Confidence: 73.83% | Accepted
+
+--------------------------------------------------
+
+Receipt: receipt_02.jpeg
+Selected method: raw
+Raw confidence: 86.29%
+Global confidence: 76.36%
+Adaptive confidence: 66.02%
+Selected confidence: 86.29%
+High-confidence detections: 24
+Low-confidence detections: 3
+
+Detected Text:
+- CHARLES | Confidence: 99.96% | Accepted
+- 4 | Confidence: 100.00% | Accepted
+- Charles St __ | Confidence: 74.80% | Accepted
+- New York , NY 10014 | Confidence: 94.30% | Accepted
+- Server: Angie $ | Confidence: 88.09% | Accepted
+- Table 8 | Confidence: 99.89% | Accepted
+- Check: 444 | Confidence: 77.69% | Accepted
+- Guest Count: | Confidence: 74.48% | Accepted
+- 2 | Confidence: 100.00% | Accepted
+- 2/25/24 | Confidence: 78.24% | Accepted
+- Ordered: | Confidence: 99.94% | Accepted
+- 4 | Confidence: 100.00% | Accepted
+- Charless Prime Rib | Confidence: 99.74% | Accepted
+- 8289. 00 | Confidence: 65.30% | Accepted
+- Dinner for Two | Confidence: 83.96% | Accepted
+- Green Beans | Confidence: 96.51% | Accepted
+- 818. 00 | Confidence: 65.25% | Accepted
+- Chocolate Cream Pie | Confidence: 99.89% | Accepted
+- 822.00 | Confidence: 58.96% | Human Review
+- Subtotal | Confidence: 99.99% | Accepted
+- S329 . 00 | Confidence: 54.43% | Human Review
+- New York City | Confidence: 97.07% | Accepted
+- 829.15 | Confidence: 86.26% | Accepted
+- Tip | Confidence: 99.98% | Accepted
+- 865.80 | Confidence: 89.76% | Accepted
+- Total | Confidence: 100.00% | Accepted
+- 8394.95 | Confidence: 45.40% | Human Review
+
+--------------------------------------------------
+
+Receipt: receipt_03.jpg
+Selected method: raw
+Raw confidence: 38.48%
+Global confidence: 1.43%
+Adaptive confidence: 29.38%
+Selected confidence: 38.48%
+High-confidence detections: 12
+Low-confidence detections: 24
+
+Detected Text:
+- ~EA | Confidence: 20.97% | Human Review
+- 0093 | Confidence: 97.54% | Accepted
+- Teple 707 | Confidence: 75.06% | Accepted
+- #ant; | Confidence: 16.03% | Human Review
+- LEWLAKI | Confidence: 10.47% | Human Review
+- Svrlk:   B 17.59 05/29/21 | Confidence: 29.29% | Human Review
+- RIESLING B0Z | Confidence: 30.58% | Human Review
+- 10,50 | Confidence: 82.19% | Accepted
+- RieSLikg E12 | Confidence: 9.88% | Human Review
+- CCJ 601 | Confidence: 21.83% | Human Review
+- Cj C4B EOL | Confidence: 3.06% | Human Review
+- KCa/y-"ISSE | Confidence: 0.46% | Human Review
+- blve Points; | Confidence: 16.75% | Human Review
+- nttly | Confidence: 29.43% | Human Review
+- 2.95 | Confidence: 99.43% | Accepted
+- Ferca | Confidence: 18.49% | Human Review
+- 30,55 | Confidence: 10.48% | Human Review
+- S RJFIST | Confidence: 4.84% | Human Review
+- 24,95 | Confidence: 44.43% | Human Review
+- NaIne SCALLIPS | Confidence: 12.30% | Human Review
+- 32.95 | Confidence: 69.17% | Accepted
+- Sc4Pr | Confidence: 6.04% | Human Review
+- Pasta | Confidence: 74.11% | Accepted
+- Tct: | Confidence: 2.08% | Human Review
+- 131,C0 | Confidence: 39.95% | Human Review
+- 05/29 19:04 TOTAL | Confidence: 66.96% | Accepted
+- 191 | Confidence: 99.99% | Accepted
+- 86 | Confidence: 99.25% | Accepted
+- 142.92 | Confidence: 81.39% | Accepted
+- Join W5l | Confidence: 36.49% | Human Review
+- Karoy nour Snecialg | Confidence: 7.07% | Human Review
+- Server | Confidence: 61.52% | Accepted
+- Dur Bal | Confidence: 16.37% | Human Review
+- Area Only | Confidence: 70.07% | Accepted
+- Kincay-Thurg0a, | Confidence: 11.07% | Human Review
+- Fncay | Confidence: 10.13% | Human Review
+
+--------------------------------------------------
+
+Receipt: receipt_04.png
+Selected method: raw
+Raw confidence: 80.09%
+Global confidence: 44.29%
+Adaptive confidence: 59.32%
+Selected confidence: 80.09%
+High-confidence detections: 26
+Low-confidence detections: 7
+
+Detected Text:
+- C3 | Confidence: 44.61% | Human Review
+- 312 NW 23rd | Confidence: 89.08% | Accepted
+- OKC , OK 73103 | Confidence: 87.34% | Accepted
+- 405)225-1222 | Confidence: 99.61% | Accepted
+- Server | Confidence: 100.00% | Accepted
+- Day Bar | Confidence: 98.48% | Accepted
+- Check #48 | Confidence: 99.60% | Accepted
+- Monica | Confidence: 99.97% | Accepted
+- Ordered: | Confidence: 99.94% | Accepted
+- 5/9/26 12:36 PM | Confidence: 80.95% | Accepted
+- B lackened Chicken Tenders | Confidence: 86.34% | Accepted
+- $9,99 | Confidence: 24.25% | Human Review
+- Blackened Chicken Wings | Confidence: 95.72% | Accepted
+- 89,99 | Confidence: 85.53% | Accepted
+- Popcorn Shrimp Basket | Confidence: 99.08% | Accepted
+- 89,99 | Confidence: 59.32% | Human Review
+- Fried Gizzard Basket | Confidence: 99.20% | Accepted
+- 88 .99 | Confidence: 47.42% | Human Review
+- Cajun Fettuccine | Confidence: 90.08% | Accepted
+- 811,99 | Confidence: 67.38% | Accepted
+- Fry Chicken Po Boy | Confidence: 91.17% | Accepted
+- $9.99 | Confidence: 41.55% | Human Review
+- Crabby Patty Burger | Confidence: 97.74% | Accepted
+- 89,99 | Confidence: 62.39% | Accepted
+- Loaded Shrimp Fries | Confidence: 92.09% | Accepted
+- 89,99 | Confidence: 57.18% | Human Review
+- 880 . 92 | Confidence: 64.07% | Accepted
+- Subtotal | Confidence: 73.21% | Accepted
+- 87,06 | Confidence: 99.80% | Accepted
+- Tax | Confidence: 99.99% | Accepted
+- 587 . 98 | Confidence: 39.06% | Human Review
+- Total | Confidence: 88.46% | Accepted
+- Powered by Toast | Confidence: 82.27% | Accepted
+
+--------------------------------------------------
+
+Receipt: receipt_05.png
+Selected method: raw
+Raw confidence: 54.80%
+Global confidence: 41.05%
+Adaptive confidence: 18.93%
+Selected confidence: 54.80%
+High-confidence detections: 1
+Low-confidence detections: 1
+
+Detected Text:
+- FiniSH LINE | Confidence: 47.42% | Human Review
+- 2 | Confidence: 62.18% | Accepted
+
+--------------------------------------------------
+
+OVERALL SUMMARY
+==================================================
+Receipts processed: 5
+Raw selected: 5
+Global selected: 0
+Adaptive selected: 0
+Total detections: 145
+High-confidence detections: 89
+Low-confidence detections: 56
+Overall average confidence: 64.46%

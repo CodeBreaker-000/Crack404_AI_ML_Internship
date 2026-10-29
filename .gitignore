@@ -1,0 +1,56 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+tempCodeRunnerFile.py
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Pytest / coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE files
+.idea/
+
+# Optional model/cache folders
+.cache/
+~/.cache/
+
+# EasyOCR downloaded model cache if created locally inside project
+.easyocr/
+
+# Do not ignore project outputs, receipt images, notebooks,
+# model files, JSON reports, or requirements files because
+# they are part of the internship submission.
