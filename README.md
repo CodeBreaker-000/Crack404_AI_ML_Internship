@@ -13,6 +13,7 @@ The work covers machine learning, model persistence, computer vision, and OCR-ba
 | Week 1 | Customer Churn Prediction | Machine Learning, Random Forest, Model Evaluation | Completed |
 | Week 2 | Model Serialization & Inference | Pickle, Joblib, Standalone Prediction | Completed |
 | Week 3 | Automated Receipt OCR | OpenCV, EasyOCR, Image Processing | Completed |
+| Week 4 | Customer Sentiment Analysis | NLP, Text Processing, Deep Learning | In Progress |
 
 ---
 
@@ -85,6 +86,42 @@ The third project focused on building an OCR pipeline for receipt and invoice im
 
 ---
 
+## Week 4 — Customer Sentiment Analysis
+
+The fourth project focuses on analysing customer sentiment from text using Natural Language Processing and Deep Learning.
+
+### Work Completed So Far
+
+- Set up the Week 4 project structure
+- Loaded the IMDB Movie Reviews dataset
+- Analysed the dataset structure and sentiment labels
+- Checked for missing values
+- Identified and removed duplicate reviews
+- Reduced the dataset from **50,000 to 49,582 unique reviews**
+- Analysed the final sentiment distribution:
+  - Positive: **24,884 (50.19%)**
+  - Negative: **24,698 (49.81%)**
+- Saved the cleaned dataset as `IMDB_Cleaned.csv`
+- Prepared the dataset for the upcoming text preprocessing and neural network stages
+
+### Next Steps
+
+- Clean and tokenize the review text
+- Convert words into numerical sequences
+- Apply sequence padding
+- Build a neural network with an Embedding layer
+- Train and evaluate the sentiment model
+- Test the model using three custom sentences
+- Save the trained model weights
+
+### Technologies
+
+`Python` `Pandas` `NumPy` `PyTorch` `NLP`
+
+📁 [`week4_sentiment_analysis/`](./week4_sentiment_analysis)
+
+---
+
 ## 🛠️ Technologies Used
 
 - Python
@@ -98,6 +135,7 @@ The third project focused on building an OCR pipeline for receipt and invoice im
 - OpenCV
 - EasyOCR
 - PyTorch
+- NLP
 
 ---
 
@@ -125,6 +163,14 @@ Crack404_AI_ML_Internship/
 │   ├── outputs/
 │   ├── ocr_pipeline.py
 │   └── requirements.txt
+│
+├── week3_ocr_project/
+│   ├── data/
+│   ├── models/
+│   ├── outputs/
+│   ├── screenshots/
+│   ├── requirements.txt
+│   └── sentiment_analysis.ipynb
 │
 ├── README.md
 └── .gitignore
@@ -161,6 +207,7 @@ The script processes the receipt images, compares different OCR input methods, g
 - Week 1 — Completed
 - Week 2 — Completed
 - Week 3 — Completed
+- Week 4 — In Progress
 
 More projects will be added as the internship continues.
 
