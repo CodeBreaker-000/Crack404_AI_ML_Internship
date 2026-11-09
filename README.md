@@ -2,7 +2,7 @@
 
 This repository contains the practical projects I completed during my **Crack404 AI/ML Internship**.
 
-The work covers machine learning, model persistence, computer vision, and OCR-based automation using Python.
+The work covers machine learning, model persistence, computer vision, OCR-based automation, Natural Language Processing, and Deep Learning using Python.
 
 ---
 
@@ -13,7 +13,7 @@ The work covers machine learning, model persistence, computer vision, and OCR-ba
 | Week 1 | Customer Churn Prediction | Machine Learning, Random Forest, Model Evaluation | Completed |
 | Week 2 | Model Serialization & Inference | Pickle, Joblib, Standalone Prediction | Completed |
 | Week 3 | Automated Receipt OCR | OpenCV, EasyOCR, Image Processing | Completed |
-| Week 4 | Customer Sentiment Analysis | NLP, Text Processing, Deep Learning | In Progress |
+| Week 4 | Customer Sentiment Analysis | NLP, PyTorch, Deep Learning | Completed |
 
 ---
 
@@ -88,35 +88,37 @@ The third project focused on building an OCR pipeline for receipt and invoice im
 
 ## Week 4 — Customer Sentiment Analysis
 
-The fourth project focuses on analysing customer sentiment from text using Natural Language Processing and Deep Learning.
+The fourth project focused on analysing customer sentiment from text using Natural Language Processing and Deep Learning.
 
-### Work Completed So Far
+### Main Work
 
-- Set up the Week 4 project structure
-- Loaded the IMDB Movie Reviews dataset
-- Analysed the dataset structure and sentiment labels
-- Checked for missing values
-- Identified and removed duplicate reviews
-- Reduced the dataset from **50,000 to 49,582 unique reviews**
+- Loaded and analysed the IMDB Movie Reviews dataset
+- Checked for missing values and duplicate reviews
+- Removed duplicate records, reducing the dataset from **50,000 to 49,582 unique reviews**
 - Analysed the final sentiment distribution:
   - Positive: **24,884 (50.19%)**
   - Negative: **24,698 (49.81%)**
-- Saved the cleaned dataset as `IMDB_Cleaned.csv`
-- Prepared the dataset for the upcoming text preprocessing and neural network stages
-
-### Next Steps
-
-- Clean and tokenize the review text
-- Convert words into numerical sequences
-- Apply sequence padding
-- Build a neural network with an Embedding layer
-- Train and evaluate the sentiment model
-- Test the model using three custom sentences
-- Save the trained model weights
+- Converted sentiment labels into binary values
+- Cleaned review text by removing HTML tags, unnecessary characters, and extra spaces
+- Tokenized reviews into individual words
+- Removed stopwords while keeping sentiment-important words such as `not`, `no`, and `never`
+- Applied stemming to simplify word variations
+- Created a vocabulary of the most frequent words
+- Converted review text into numerical sequences
+- Applied sequence padding to create equal-length model inputs
+- Split the dataset into training and testing sets
+- Converted the data into PyTorch tensors and DataLoaders
+- Built a sentiment classification neural network using an Embedding layer and fully connected layers
+- Used ReLU activation and Sigmoid output for binary classification
+- Trained and evaluated the model using unseen test data
+- Generated a classification report and confusion matrix
+- Saved the trained model as `sentiment_model.pt`
+- Saved the vocabulary for future predictions
+- Tested the model using three completely new custom sentences
 
 ### Technologies
 
-`Python` `Pandas` `NumPy` `PyTorch` `NLP`
+`Python` `Pandas` `NumPy` `NLTK` `Scikit-learn` `PyTorch` `NLP` `Deep Learning`
 
 📁 [`week4_sentiment_analysis/`](./week4_sentiment_analysis)
 
@@ -136,6 +138,8 @@ The fourth project focuses on analysing customer sentiment from text using Natur
 - EasyOCR
 - PyTorch
 - NLP
+- NLTK
+- Deep Learning
 
 ---
 
@@ -172,6 +176,17 @@ Crack404_AI_ML_Internship/
 │   ├── requirements.txt
 │   └── sentiment_analysis.ipynb
 │
+│── week4_sentiment_analysis/
+│   ├── data/
+│   ├── models/
+│   │   ├── sentiment_model.pt
+│   │   └── vocabulary.json
+│   ├── outputs/
+│   │   └── IMDB_Cleaned.csv
+│   ├── screenshots/
+│   ├── sentiment_analysis.ipynb
+│   └── requirements.txt
+│
 ├── README.md
 └── .gitignore
 ```
@@ -207,7 +222,7 @@ The script processes the receipt images, compares different OCR input methods, g
 - Week 1 — Completed
 - Week 2 — Completed
 - Week 3 — Completed
-- Week 4 — In Progress
+- Week 4 — Completed
 
 More projects will be added as the internship continues.
 
