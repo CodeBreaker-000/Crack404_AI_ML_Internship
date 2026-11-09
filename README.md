@@ -14,6 +14,7 @@ The work covers machine learning, model persistence, computer vision, OCR-based 
 | Week 2 | Model Serialization & Inference | Pickle, Joblib, Standalone Prediction | Completed |
 | Week 3 | Automated Receipt OCR | OpenCV, EasyOCR, Image Processing | Completed |
 | Week 4 | Customer Sentiment Analysis | NLP, PyTorch, Deep Learning | Completed |
+| Week 5 | Customer Churn Prediction API | FastAPI, Pydantic, Model Integration | In Progress |
 
 ---
 
@@ -124,6 +125,44 @@ The fourth project focused on analysing customer sentiment from text using Natur
 
 ---
 
+## Week 5 — Customer Churn Prediction API
+
+The fifth project focuses on exposing the previously trained Customer Churn model through a FastAPI microservice so external applications can send customer information and receive predictions through an API.
+
+### Work Completed So Far
+
+- Created the Week 5 FastAPI project structure
+- Installed and configured FastAPI and Uvicorn
+- Reused the saved `model_v1.joblib` churn model from Week 2
+- Implemented a FastAPI `lifespan` function to load the model once when the server starts
+- Stored the loaded model in memory for reuse across requests
+- Created the FastAPI application with project metadata
+- Defined a Pydantic `CustomerData` schema containing the required customer input fields
+- Added appropriate data types for numerical and categorical features
+- Created a root `/` endpoint to confirm that the API is running
+- Successfully launched the API using Uvicorn
+- Accessed the API through FastAPI Swagger UI
+- Identified a Scikit-learn version mismatch when loading the serialized model
+- Matched the environment to `scikit-learn==1.6.1`, allowing the saved pipeline to load correctly
+- Created a version-locked `requirements.txt` file for the API environment
+
+### Next Steps
+
+- Create the `POST /predict` endpoint
+- Convert incoming Pydantic data into a Pandas DataFrame
+- Pass the customer data to the saved churn pipeline
+- Return the churn prediction as JSON
+- Test valid and invalid API requests through Swagger UI
+- Capture the required successful prediction screenshot
+
+### Technologies
+
+`Python` `FastAPI` `Uvicorn` `Pydantic` `Joblib` `Pandas` `Scikit-learn`
+
+📁 [`week5_fastapi/`](./week5_fastapi)
+
+---
+
 ## 🛠️ Technologies Used
 
 - Python
@@ -187,6 +226,11 @@ Crack404_AI_ML_Internship/
 │   ├── sentiment_analysis.ipynb
 │   └── requirements.txt
 │
+│── week5_fastapi/
+│   ├── main.py
+│   ├── model_v1.joblib
+│   └── requirements.txt
+│
 ├── README.md
 └── .gitignore
 ```
@@ -223,6 +267,7 @@ The script processes the receipt images, compares different OCR input methods, g
 - Week 2 — Completed
 - Week 3 — Completed
 - Week 4 — Completed
+- Week 5 — In Progress
 
 More projects will be added as the internship continues.
 
