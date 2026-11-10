@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 import os
 
 import joblib
+import pandas as pd
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -67,3 +68,24 @@ def home():
     }
     
     
+@app.post("/predict")
+def predict_churn(customer: CustomerData):
+
+    customer_data = customer.model_dump()
+
+    customer_df = pd.DataFrame([customer_data])
+
+    model = models["churn_model"]
+
+    churn_probability = model.predict_proba(customer_df)[0][1]
+
+    threshold = 0.40
+
+    churn_prediction = churn_probability >= threshold
+
+    return {
+        "churn": bool(churn_prediction),
+        "churn_probability": round(float(churn_probability), 4),
+        "threshold": threshold
+    }
+

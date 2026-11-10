@@ -135,25 +135,30 @@ The fifth project focuses on exposing the previously trained Customer Churn mode
 - Installed and configured FastAPI and Uvicorn
 - Reused the saved `model_v1.joblib` churn model from Week 2
 - Implemented a FastAPI `lifespan` function to load the model once when the server starts
-- Stored the loaded model in memory for reuse across requests
-- Created the FastAPI application with project metadata
-- Defined a Pydantic `CustomerData` schema containing the required customer input fields
-- Added appropriate data types for numerical and categorical features
-- Created a root `/` endpoint to confirm that the API is running
-- Successfully launched the API using Uvicorn
-- Accessed the API through FastAPI Swagger UI
-- Identified a Scikit-learn version mismatch when loading the serialized model
-- Matched the environment to `scikit-learn==1.6.1`, allowing the saved pipeline to load correctly
-- Created a version-locked `requirements.txt` file for the API environment
+- Stored the loaded model in memory for reuse across prediction requests
+- Defined a Pydantic `CustomerData` schema using the customer features required by the trained churn model
+- Added appropriate data types for numerical and categorical customer information
+- Created a root `/` endpoint to confirm that the API server is running
+- Created a `POST /predict` endpoint for customer churn predictions
+- Converted validated Pydantic input into a Pandas DataFrame before passing it to the saved machine learning pipeline
+- Used `predict_proba()` to calculate the probability of customer churn
+- Applied the existing `0.40` decision threshold from the Week 1 churn model
+- Returned the churn result, probability and threshold as a JSON response
+- Successfully tested the API through FastAPI Swagger UI
+- Tested both churn and non-churn customer profiles
+- Received `churn: true` with a probability of `0.87` for one test customer
+- Received `churn: false` with a probability of `0.00` for another test customer
+- Identified and resolved a Scikit-learn version mismatch by using `scikit-learn==1.6.1`
+- Created a version-locked `requirements.txt` for the API environment
 
 ### Next Steps
 
-- Create the `POST /predict` endpoint
-- Convert incoming Pydantic data into a Pandas DataFrame
-- Pass the customer data to the saved churn pipeline
-- Return the churn prediction as JSON
-- Test valid and invalid API requests through Swagger UI
-- Capture the required successful prediction screenshot
+- Test missing and invalid customer input through Swagger UI
+- Review Pydantic validation and FastAPI error responses
+- Test how the API handles an empty JSON payload
+- Review synchronous and asynchronous request handling
+- Capture the final successful Swagger UI prediction screenshot
+- Prepare for the Week 5 technical viva
 
 ### Technologies
 
