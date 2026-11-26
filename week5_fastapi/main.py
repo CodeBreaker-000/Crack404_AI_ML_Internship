@@ -5,7 +5,7 @@ import os
 import joblib
 import pandas as pd
 
-from fastapi import FastAPI
+from fastapi import BackgroundTasks, FastAPI
 from pydantic import BaseModel, Field
 
 
@@ -118,21 +118,31 @@ class CustomerData(BaseModel):
     TotalCharges: float = Field(ge=0)
 
 
+def save_prediction_log(churn, probability, threshold):
+    log_path = os.path.join(BASE_DIR, "prediction_log.txt")
+
+    with open(log_path, "a", encoding="utf-8") as file:
+        file.write(
+            f"Churn: {churn}, "
+            f"Probability: {probability:.4f}, "
+            f"Threshold: {threshold}\n"
+        )
+
+
 @app.get("/")
-def home():
+async def home():
     return {
         "message": "Customer Churn Prediction API is running"
     }
 
 
 @app.post("/predict")
-def predict_churn(customer: CustomerData):
-
+def predict_churn(customer: CustomerData, background_tasks: BackgroundTasks):
     customer_data = customer.model_dump()
 
     customer_df = pd.DataFrame([customer_data])
 
-    model = models["churn_model"] 
+    model = models["churn_model"]
 
     churn_probability = model.predict_proba(customer_df)[0][1]
 
@@ -140,10 +150,16 @@ def predict_churn(customer: CustomerData):
 
     churn_prediction = churn_probability >= threshold
 
+    background_tasks.add_task(
+        save_prediction_log,
+        bool(churn_prediction),
+        float(churn_probability),
+        threshold
+    )
+
     return {
         "churn": bool(churn_prediction),
         "churn_probability": round(float(churn_probability), 4),
         "threshold": threshold
-    } 
+    }
 
-    

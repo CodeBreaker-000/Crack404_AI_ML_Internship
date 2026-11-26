@@ -26,6 +26,7 @@ dist/
 
 # Logs
 *.log
+prediction_log.txt
 
 # Temporary files
 *.tmp

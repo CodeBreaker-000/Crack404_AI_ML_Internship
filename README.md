@@ -14,7 +14,7 @@ The work covers machine learning, model persistence, computer vision, OCR-based 
 | Week 2 | Model Serialization & Inference | Pickle, Joblib, Standalone Prediction | Completed |
 | Week 3 | Automated Receipt OCR | OpenCV, EasyOCR, Image Processing | Completed |
 | Week 4 | Customer Sentiment Analysis | NLP, PyTorch, Deep Learning | Completed |
-| Week 5 | Customer Churn Prediction API | FastAPI, Pydantic, Model Integration | In Progress |
+| Week 5 | Customer Churn Prediction API | FastAPI, Pydantic, API Integration | Completed |
 
 ---
 
@@ -127,42 +127,84 @@ The fourth project focused on analysing customer sentiment from text using Natur
 
 ## Week 5 — Customer Churn Prediction API
 
-The fifth project focuses on exposing the previously trained Customer Churn model through a FastAPI microservice so external applications can send customer information and receive predictions through an API.
+The fifth project focused on deploying the previously trained Customer Churn model through a FastAPI microservice. The API allows external applications to submit customer information, validate the input, and receive real-time churn predictions as JSON responses without retraining the model.
 
-### Work Completed So Far
+### Main Work
 
-- Created the Week 5 FastAPI project structure
-- Installed and configured FastAPI and Uvicorn
-- Reused the saved `model_v1.joblib` churn model from Week 2
-- Implemented a FastAPI `lifespan` function to load the model once when the server starts
+- Created a FastAPI application for customer churn prediction
+- Reused the saved `model_v1.joblib` machine learning pipeline from Week 2
+- Implemented FastAPI `lifespan` to load the trained model once during application startup
 - Stored the loaded model in memory for reuse across prediction requests
-- Defined a Pydantic `CustomerData` schema using the customer features required by the trained churn model
-- Added appropriate data types for numerical and categorical customer information
-- Created a root `/` endpoint to confirm that the API server is running
-- Created a `POST /predict` endpoint for customer churn predictions
-- Converted validated Pydantic input into a Pandas DataFrame before passing it to the saved machine learning pipeline
-- Used `predict_proba()` to calculate the probability of customer churn
-- Applied the existing `0.40` decision threshold from the Week 1 churn model
-- Returned the churn result, probability and threshold as a JSON response
-- Successfully tested the API through FastAPI Swagger UI
-- Tested both churn and non-churn customer profiles
-- Received `churn: true` with a probability of `0.87` for one test customer
-- Received `churn: false` with a probability of `0.00` for another test customer
-- Identified and resolved a Scikit-learn version mismatch by using `scikit-learn==1.6.1`
-- Created a version-locked `requirements.txt` for the API environment
+- Defined a Pydantic `CustomerData` schema containing all 19 required customer features
+- Applied strict categorical validation using `Literal` and numerical constraints using `Field`
+- Created a root `GET /` endpoint to check API availability
+- Implemented a `POST /predict` endpoint to process customer data and generate predictions
+- Converted validated customer inputs into a Pandas DataFrame before passing them to the trained pipeline
+- Used `predict_proba()` to calculate customer churn probabilities
+- Applied the existing `0.40` decision threshold to classify customers as churn or non-churn
+- Returned the churn prediction, probability, and threshold in JSON format
+- Successfully tested the API through FastAPI's interactive Swagger UI
+- Verified predictions for both churn and non-churn customer profiles
+- Tested invalid inputs, including missing fields, incorrect data types, unsupported categories, and negative numerical values
+- Confirmed that FastAPI returns HTTP `422` validation responses for invalid requests
+- Used a synchronous `def` endpoint for machine learning inference to avoid blocking the asynchronous event loop
+- Integrated FastAPI `BackgroundTasks` to record prediction results after API responses
+- Verified successful background logging in `prediction_log.txt`
+- Resolved a Scikit-learn version compatibility issue when loading the serialized model
+- Maintained a version-locked `requirements.txt` for environment consistency
 
-### Next Steps
+### API Testing Results
 
-- Test missing and invalid customer input through Swagger UI
-- Review Pydantic validation and FastAPI error responses
-- Test how the API handles an empty JSON payload
-- Review synchronous and asynchronous request handling
-- Capture the final successful Swagger UI prediction screenshot
-- Prepare for the Week 5 technical viva
+The prediction endpoint was successfully tested using two different customer profiles.
+
+| Test Case | Churn Prediction | Probability | HTTP Status |
+|---|---|---|---|
+| Customer 1 | True | 87% | 200 |
+| Customer 2 | False | 0% | 200 |
+
+Both predictions used the `0.40` decision threshold. Additional validation tests confirmed that invalid customer data was rejected before reaching the trained machine learning model.
 
 ### Technologies
 
-`Python` `FastAPI` `Uvicorn` `Pydantic` `Joblib` `Pandas` `Scikit-learn`
+`Python` `FastAPI` `Uvicorn` `Pydantic` `Pandas` `Scikit-learn` `Joblib`
+
+### Running the API
+
+Install the required dependencies:
+
+```bash
+cd week5_fastapi
+python -m pip install -r requirements.txt
+```
+
+Start the FastAPI server:
+
+```bash
+python -m uvicorn main:app --reload
+```
+
+Open the interactive Swagger UI documentation:
+
+`http://127.0.0.1:8000/docs`
+
+Use the `POST /predict` endpoint to submit customer details and receive a churn prediction.
+
+### Project Structure
+
+```text
+week5_fastapi/
+├── main.py
+├── model_v1.joblib
+├── requirements.txt
+└── screenshots/
+    └── swagger_prediction.png
+```
+
+The API also generates a local `prediction_log.txt` file to record prediction results through background tasks.
+
+### Key Learning
+
+This project provided practical experience in connecting a trained machine learning model to a web application using FastAPI. It covered API development, request validation, model persistence, prediction handling, background tasks, and the importance of managing synchronous and asynchronous operations.
 
 📁 [`week5_fastapi/`](./week5_fastapi)
 
@@ -184,6 +226,9 @@ The fifth project focuses on exposing the previously trained Customer Churn mode
 - NLP
 - NLTK
 - Deep Learning
+- FastAPI
+- Uvicorn
+- Pydantic
 
 ---
 
@@ -232,8 +277,11 @@ Crack404_AI_ML_Internship/
 │   └── requirements.txt
 │
 │── week5_fastapi/
+│   ├── screenshots/
+│   │   └── swagger_prediction.png
 │   ├── main.py
 │   ├── model_v1.joblib
+│   ├── prediction_log.txt
 │   └── requirements.txt
 │
 ├── README.md
@@ -272,7 +320,7 @@ The script processes the receipt images, compares different OCR input methods, g
 - Week 2 — Completed
 - Week 3 — Completed
 - Week 4 — Completed
-- Week 5 — In Progress
+- Week 5 — Completed
 
 More projects will be added as the internship continues.
 
